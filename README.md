@@ -20,16 +20,15 @@ HTML with plain JavaScript in simple straightforward scriplet tags i.e. <%=
 … %>.
 
 3. Using MongoDB
-    *   You might need `brew` installed in your machine if this is the method you want to go to
-        >   if you are using linux dont forget to add `eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)` to your `.bashrc`
-    *   `brew tap mongodb/brew` to `tap` to the offical MongoDB formula repo
-    *   `brew install mongodb-community@4.0` to install
-        >   From the terminal: 
-        >
-        >   ==> Caveats for `LINUX` users
-mongodb-community@4.0 is keg-only, which means it was not symlinked into /home/linuxbrew/.linuxbrew,
-because this is an alternate version of another formula. If you need to have mongodb-community@4.0 first in your PATH run: `echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/mongodb-community@4.0/bin:$PATH"' >> ~/.profile`
-    *   You can manually execute the service instead with: `mongod --config /home/linuxbrew/.linuxbrew/etc/mongod.conf`
+    *   Install via package management system
+        +   Get a public GPG key first 
+            >   `wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -`
+        +   Create a list file for MongoDB. 
+            >   For Ubuntu 20.04 (Focal) `echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list`
+        +   Reload local package database
+            >   `sudo apt-get update`
+        +   Install the MongoDB packages
+            >   `sudo apt-get install -y mongodb-org`
     *   Installing MongoDB Compass
-        >   Client tool provided by the MongoDB team to help see MongoDB database visuall.
-        >   `https://www.mongodb.com/try/download/compass`
+        +   Client tool provided by the MongoDB team to help see MongoDB database visuall.
+            >   `https://www.mongodb.com/try/download/compass`
