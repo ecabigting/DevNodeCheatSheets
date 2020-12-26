@@ -12,3 +12,10 @@ Development NodeJS Cheat Sheets
                > "start": "nodemon index.js"
                > },
 
+2. Template Engine : `EJS`
+    *   `npm install ejs --save`
+    *   Description: 
+        > EJS is a simple templating language that lets us generate
+HTML with plain JavaScript in simple straightforward scriplet tags i.e. <%=
+… %>.
+
