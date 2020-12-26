@@ -19,3 +19,13 @@ Development NodeJS Cheat Sheets
 HTML with plain JavaScript in simple straightforward scriplet tags i.e. <%=
 … %>.
 
+3. Using MongoDB
+    *   you need might need `brew` installed in your machine if this is the method you want to go to
+        >   if you are using linux dont forget to add `eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)` to your `.bashrc`
+    *   `brew tap mongodb/brew` to `tap` to the offical MongoDB formula repo
+    *   `brew install mongodb-community@4.0` to install
+        >   From the terminal: 
+        >
+        >   ==> Caveats
+mongodb-community@4.0 is keg-only, which means it was not symlinked into /home/linuxbrew/.linuxbrew,
+because this is an alternate version of another formula. If you need to have mongodb-community@4.0 first in your PATH run: `echo 'export PATH="/home/linuxbrew/.linuxbrew/opt/mongodb-community@4.0/bin:$PATH"' >> ~/.profile`
