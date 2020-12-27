@@ -63,12 +63,12 @@
 
 8.  Find a document that contains 'original' in the title
     ```javascript
-        BlogPost.find({
-                title:/Original/
-            },(error,blogpost) => {
-                console.log(' >>>> find blogpost with title that contains original')
-                console.log(error,blogpost)
-        })
+    BlogPost.find({
+            title:/Original/
+        },(error,blogpost) => {
+            console.log(' >>>> find blogpost with title that contains original')
+            console.log(error,blogpost)
+    })
     ```
 
 9.  Find a blogpost with specific id
