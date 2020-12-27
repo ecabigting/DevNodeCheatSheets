@@ -1,13 +1,10 @@
-1.  require mongoose
-`const mongoose = require('mongoose')`
+1.  Require mongoose
+>   `const mongoose = require('mongoose')`
 
-2.  > import the blogpost model
-> with the correct path
-`const BlogPost = require('./models/BlogPost')`
+2.  Import the blogpost model with the correct path
+>   `const BlogPost = require('./models/BlogPost')`
 
-> connect to the db
-> note: if my_database is not created
-> it will automatically be created
+3.  Connect to the db `note: if my_database is not created` it will automatically be created
 ```
 mongoose.connect('mongodb://localhost/my_database',
 {
@@ -16,9 +13,7 @@ mongoose.connect('mongodb://localhost/my_database',
 })
 ```
 
-> declare a route to home(index) or root
-> this is to list all objects for the page
-> in this case blogposts
+4.  Declare a route to home(index) or root this is to list all objects for the page in this case blogposts
 ```
 app.get('/', async (req,res)=>{
     // lets retrieve all blog post and hold them in blogposts varliable
@@ -34,11 +29,7 @@ app.get('/', async (req,res)=>{
 })
 ```
 
-> create our first post
-> with the create function
-> accepts 2 arguments
-> 1st arg: data we weant to save 
-> 2nd arg: call back function
+5.  Create our first post with the create function accepts 2 arguments 1st arg: data we weant to save 2nd arg: call back function
 ```
 BlogPost.create({
     title: "Original This is a sample Title",
@@ -52,7 +43,7 @@ BlogPost.create({
 })
 ```
 
-> get all documents of 'BlogPost'
+6.  Get all documents of 'BlogPost'
 ```
 BlogPost.find({},(error,blogpost) => {
     console.log(' >>>> Get all blogpost!')
@@ -60,7 +51,7 @@ BlogPost.find({},(error,blogpost) => {
 })
 ```
 
-> find a document with the specific title
+7.  Find a document with the specific title
 ```
 BlogPost.find({
     title:'This is a sample Title'
@@ -70,7 +61,7 @@ BlogPost.find({
 })
 ```
 
-> find a document that contains 'original' in the title
+8.   Find a document that contains 'original' in the title
 ```
 BlogPost.find({
     title:/Original/
@@ -80,14 +71,13 @@ BlogPost.find({
 })
 ```
 
-> find a blogpost with specific id
+9.  Find a blogpost with specific id
 ```
 var id = "5fe86d4483b6b3159425a285";
 BlogPost.findById(id,(error,blogpost)=>{console.log(error,blogpost)})
 ```
 
-> find a blogspot by id
-> and then update the title
+10. Find a blogspot by id and then update the title
 ```
 var id = "5fe86a731e52831481e4b0dd";
 BlogPost.findByIdAndUpdate(id,{
@@ -97,8 +87,7 @@ BlogPost.findByIdAndUpdate(id,{
 })
 ```
 
-> find a blog post with given id
-> and then delete it
+11. Find a blog post with given id and then delete it
 ```
 var id = "5fe86cf496d64a155d69590b";
 BlogPost.findByIdAndDelete(id,{
