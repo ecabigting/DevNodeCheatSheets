@@ -19,4 +19,4 @@ Development NodeJS Cheat Sheets
 HTML with plain JavaScript in simple straightforward scriplet tags i.e. <%=
 … %>.
 3.  Using MongoDB can be found [MongoDB](/MongoDB.md)
-4.  A compiled list of simple CRUD operations can be found here: [C.R.U.D](/crud.md)
+4.  A compiled list of simple CRUD functions can be found here: [C.R.U.D](/crud.md)

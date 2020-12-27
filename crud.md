@@ -117,7 +117,7 @@
         mongoose.connect('mongodb://localhost/my_database',
         {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex:true }) 
     ```
-    > Now on your find() use the **$text** operator read more [here](https://docs.mongodb.com/manual/text-search/).
+    > Now on your find() use the **$text** operator, read more [here](https://docs.mongodb.com/manual/text-search/).
     ```javascript
         app.post('/posts/search',async (req,res) => { 
             const blogposts = await BlogPost.find(
