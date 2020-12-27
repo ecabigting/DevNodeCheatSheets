@@ -18,5 +18,5 @@ Development NodeJS Cheat Sheets
         > EJS is a simple templating language that lets us generate
 HTML with plain JavaScript in simple straightforward scriplet tags i.e. <%=
 … %>.
-3. Using MongoDB can be found [MongoDB](/MongoDB.md)
-4.  A compiled list of simple CRUD operations can be found here: [C.R.U.D](https://github.com/ecabigting/DevNodeCheatSheets/blob/main/crud.js)
+3.  Using MongoDB can be found [MongoDB](/MongoDB.md)
+4.  A compiled list of simple CRUD operations can be found here: [C.R.U.D](/crud.md)
