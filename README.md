@@ -57,3 +57,4 @@ HTML with plain JavaScript in simple straightforward scriplet tags i.e. <%=
         +   To install run `npm install mongoose`
     *   Usefull link learning about Query documents
         >   https://docs.mongodb.com/manual/tutorial/query-documents/
+4.  A compiled list of simple CRUD operations can be found here: [C.R.U.D](https://github.com/ecabigting/DevNodeCheatSheets/blob/main/crud.js)
