@@ -1,7 +1,7 @@
-> require mongoose
+1.  require mongoose
 `const mongoose = require('mongoose')`
 
-> import the blogpost model
+2.  > import the blogpost model
 > with the correct path
 `const BlogPost = require('./models/BlogPost')`
 
