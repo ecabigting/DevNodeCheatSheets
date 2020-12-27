@@ -5,7 +5,7 @@
     >   `const BlogPost = require('./models/BlogPost')`
 
 3.  Connect to the db `note: if my_database is not created` it will automatically be created
-    ```
+    ```javascript
     mongoose.connect('mongodb://localhost/my_database',
     {
         useNewUrlParser: true,
@@ -14,7 +14,7 @@
     ```
 
 4.  Declare a route to home(index) or root this is to list all objects for the page in this case blogposts
-    ```
+    ```javascript
     app.get('/', async (req,res)=>{
         // lets retrieve all blog post and hold them in blogposts varliable
         const blogposts = await BlogPost.find({})
@@ -30,7 +30,7 @@
     ```
 
 5.  Create our first post with the create function accepts 2 arguments 1st arg: data we weant to save 2nd arg: call back function
-    ```
+    ```javascript
     BlogPost.create({
         title: "Original This is a sample Title",
         body: "This is a huge sample of a body Lorem ispm, lfhu2 ,gasdjjg. Cghjjugjkgkajsgasjgksadgjasd"
@@ -44,7 +44,7 @@
     ```
 
 6.  Get all documents of 'BlogPost'
-    ```
+    ```javascript
     BlogPost.find({},(error,blogpost) => {
         console.log(' >>>> Get all blogpost!')
         console.log(error,blogpost)
@@ -52,7 +52,7 @@
     ```
 
 7.  Find a document with the specific title
-    ```
+    ```javascript
     BlogPost.find({
         title:'This is a sample Title'
     },(error,blogpost) => {
@@ -62,7 +62,7 @@
     ```
 
 8.   Find a document that contains 'original' in the title
-    ```
+    ```javascript
     BlogPost.find({
         title:/Original/
     },(error,blogpost) => {
@@ -72,13 +72,13 @@
     ```
 
 9.  Find a blogpost with specific id
-    ```
+    ```javascript
     var id = "5fe86d4483b6b3159425a285";
     BlogPost.findById(id,(error,blogpost)=>{console.log(error,blogpost)})
     ```
 
 10. Find a blogspot by id and then update the title
-    ```
+    ```javascript
     var id = "5fe86a731e52831481e4b0dd";
     BlogPost.findByIdAndUpdate(id,{
         title:'Choose again!'
@@ -88,7 +88,7 @@
     ```
 
 11. Find a blog post with given id and then delete it
-    ```
+    ```javascript
     var id = "5fe86cf496d64a155d69590b";
     BlogPost.findByIdAndDelete(id,{
         title:'A blog post title of rain!'
