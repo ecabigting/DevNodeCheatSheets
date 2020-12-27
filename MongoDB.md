@@ -28,11 +28,11 @@
             +   Data Directory : `/var/lib/mongodb`
             +   Log Directory : `/var/log/mongodb`
             +   Config File:    `/etc/mongod.conf`
-    *   Installing MongoDB Compass
-        +   Client tool provided by the MongoDB team to help see MongoDB database visuall.
-            >   `https://www.mongodb.com/try/download/compass`
-    *   Using Mongoose
-        +   To connect to MongoDB from node, we will need a lib. Mongoose is the officially supported Node.js package
-        +   To install run `npm install mongoose`
-    *   Usefull link learning about Query documents
-        >   https://docs.mongodb.com/manual/tutorial/query-documents/
+*   Installing MongoDB Compass
+    +   Client tool provided by the MongoDB team to help see MongoDB database visuall.
+        >   `https://www.mongodb.com/try/download/compass`
+*   Using Mongoose
+    +   To connect to MongoDB from node, we will need a lib. Mongoose is the officially supported Node.js package
+    +   To install run `npm install mongoose`
+*   Usefull link learning about Query documents
+    >   https://docs.mongodb.com/manual/tutorial/query-documents/
