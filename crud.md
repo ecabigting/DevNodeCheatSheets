@@ -100,3 +100,17 @@
         console.log(error,blogspot)
     })
     ```
+12. Using full text search on all string fields, you need to create index for each field.
+    ```javascript
+        const BlogPostSchema = new Schema({
+                title: String,
+                body: String
+                });
+        // create the indexes
+        BlogPostSchema.index({title:"text",body:"text"})
+    ```
+    > Make sure to set **useCreateIndex:true** in your connection
+    ```javascript
+    mongoose.connect('mongodb://localhost/my_database',
+    {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex:true }) 
+    ```
