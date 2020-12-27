@@ -55,3 +55,5 @@ HTML with plain JavaScript in simple straightforward scriplet tags i.e. <%=
     *   Using Mongoose
         +   To connect to MongoDB from node, we will need a lib. Mongoose is the officially supported Node.js package
         +   To install run `npm install mongoose`
+    *   Usefull link learning about Query documents
+        >   https://docs.mongodb.com/manual/tutorial/query-documents/
