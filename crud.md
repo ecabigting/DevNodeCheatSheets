@@ -5,7 +5,7 @@
     >   `const BlogPost = require('./models/BlogPost')`
 
 3.  Connect to the db `note: if my_database is not created` it will automatically be created
-    >```
+    ```
     mongoose.connect('mongodb://localhost/my_database',
     {
         useNewUrlParser: true,
