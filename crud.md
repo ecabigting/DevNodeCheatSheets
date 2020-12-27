@@ -1,3 +1,6 @@
+# Cheat Sheet for Create, Read, Update, and Search functions using NodeJS with MongoDB(mongoose)
+
+### In the example below I use **blogpost** to refer to the collection and **post** to refer to documents as example.
 1.  Require mongoose
     ```javascript
     const mongoose = require('mongoose')
@@ -100,7 +103,7 @@
         console.log(error,blogspot)
     })
     ```
-12. Using full text search on all string fields, you need to create index for each field.
+12. Using full text search on all string fields, you need to create index for each field first.
     ```javascript
         const BlogPostSchema = new Schema({
                 title: String,
@@ -111,6 +114,16 @@
     ```
     > Make sure to set **useCreateIndex:true** in your connection
     ```javascript
-    mongoose.connect('mongodb://localhost/my_database',
-    {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex:true }) 
+        mongoose.connect('mongodb://localhost/my_database',
+        {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex:true }) 
+    ```
+    > Now on your find() use the **$text** operator read more [here](https://docs.mongodb.com/manual/text-search/).
+    ```javascript
+        app.post('/posts/search',async (req,res) => { 
+            const blogposts = await BlogPost.find(
+                    {$text : {$search: req.body.search}},
+                    {score: {$meta: "textScore"}}
+                )
+            res.render('index',{ blogposts })
+        })
     ```
