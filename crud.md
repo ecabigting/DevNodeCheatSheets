@@ -127,3 +127,44 @@
             res.render('index',{ blogposts })
         })
     ```
+13. Receiving files from an html form
+    > Install the express-fileupload package
+    ```javascript
+        npm install --save express-fileupload
+    ```
+    > Use the following code to initiate:
+    ```javascript
+        const fileUpload = require('express-fileupload') // adds the files property to the req object so that we can access the files using req.files
+        app.use(fileUpload()) // register the package in Express
+    ```
+    > Usage of the file upload on a request
+    ```javascript
+        app.post('/posts/store', (req,res)=>{
+            // create a shortcut to req.files.image
+            // the req.files.image object contains properties such as mv
+            // mv - is a function to move the file elsewhere on your server name
+            // see complete list of properties of express-fileupload
+            // https://www.npmjs.com/package/express-fileupload
+            let image = req.files.image; 
+
+            // the code below image.mv moves the uploaded file to public/img directory
+            // and name it using the image.name property
+            // once this is done, we create the post
+            image.mv(path.resolve(__dirname,'public/img',image.name),
+                // note the async statement, 
+                // we only use async in the scope where we use await
+                async (error) => {
+                    console.log(error)
+                    await BlogPost.create(req.body)
+                    res.redirect('/')
+                }
+            )
+        })
+    ```
+    > For the request example above to recieved the file from the html form you need to specify `enctype="multipart/form"` attributes in the form tag
+    ```html
+        <form action="/posts/store" method="POST" enctype="multipart/form-data">
+        <!-- your forms -->
+        </form>
+    ```
+14. Bonus tip when  writing routes in order [read here](https://www.reddit.com/r/node/comments/kxe4b7/hello_im_trying_to_learn_nodejs_by_following/gj9njj1?utm_source=share&utm_medium=web2x&context=3).
