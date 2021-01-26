@@ -1,4 +1,4 @@
-# Cheat Sheet for Create, Read, Update, and Search functions using NodeJS with MongoDB(mongoose)
+# Cheat Sheet for Create, Read, Update, and Search functions using NodeJS and ExpressJS with MongoDB(mongoose) as the database.
 
 ### In the example below I use **blogpost** to refer to the collection and **post** to refer to documents as example.
 1.  Require mongoose
