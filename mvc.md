@@ -32,7 +32,8 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
     app.use(fileUpload()) // register the fileupload package in Express
     app.set('view engine','ejs') // require ejs templating language
 
-    app.listen(1204, ()=>{ console.log('>> App listening on port 1204') }) // start the app and listen to port 1204
+    // start the app and listen to port 1204
+    app.listen(1204, ()=>{ console.log('>> App listening on port 1204') }) 
 
     // here is an example loading a view from a request
     // declare a route to home(index) or root
@@ -61,7 +62,8 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
     const mongoose = require('mongoose') // we need to call mongoose as the offical nodejs library for MongoDb
     const Schema = mongoose.Schema; // starting our schema
 
-    const BlogPostSchema = new Schema({ // declaring our schema for blogpost
+    // declaring our schema for blogpost
+    const BlogPostSchema = new Schema({ 
         // below are the fields of our schema with data type of each field
         title: String,
         body: String,
@@ -72,25 +74,22 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
         image: String
     });
 
-    /*
-        lets say our Blogpost Schema is index for searching 
+    /* lets say our Blogpost Schema is index for searching 
         and we are indexing the 'title' field and the 'body' field 
         we really do not need to do this but its helpful 
         for text searching our BlogPostDictionairy later on
     */
     BlogPostSchema.index({title:"text",body:"text"}) 
-    /*
-        lets initate our Model BlogPost
-    */
+    // lets initate our Model BlogPost    
     const BlogPost = mongoose.model('BlogPost',BlogPostSchema);
     module.exports = BlogPost // finally export our module
 ```
 
-3. Creating your **View**
+3. Creating your **View**.
 ```html
-    <!-- Creating your View -->
-    <!-- Create a folder called views on the same folder as your app.js -->
-    <!-- Inside the views folder create your first view index.ejs
+    <!-- Creating your View 
+    Create a folder called views on the same folder as your app.js
+    Inside the views folder create your first view index.ejs
     (notice the ejs since we are using the ejs templating language) -->
     <!DOCTYPE html>
     <html lang="en">
@@ -150,21 +149,21 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
     </html>
 ```
 
-3. Creating your Controller
+3. Creating your **Controller**.
 ```javascript
     /* Creating your controller
        Create a folder called controllers on the same folder as your app.js
        Inside the models folder create your first controller home.js
     */ 
 
-    /*
-        since our sample view requires our list of blog post 
+    /* since our sample view requires our list of blog post 
         lets load our blogpost model first
     */
     const BlogPost = require('../models/BlogPost.js') 
     // here is the request and response code for our home.js
-    module.exports = async (req, res) =>    {
-        const blogposts = await BlogPost.find({}) // we are fetching all blogpost in our mongoDb
+    module.exports = async (req, res) => {
+        // we are fetching all blogpost in our mongoDb
+        const blogposts = await BlogPost.find({}) 
         res.render('index',{ // render our index.ejs file
             blogposts // send our blogpost list object
         });
