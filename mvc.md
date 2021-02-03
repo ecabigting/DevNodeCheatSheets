@@ -73,8 +73,10 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
     });
 
     /*
-        lets say our Blogpost Schema is index for searching and we are indexing the 'title' field and the 'body' field we really do not need to do this but its helpful for text searching
-        our BlogPostDictionairy later on
+        lets say our Blogpost Schema is index for searching 
+        and we are indexing the 'title' field and the 'body' field 
+        we really do not need to do this but its helpful 
+        for text searching our BlogPostDictionairy later on
     */
     BlogPostSchema.index({title:"text",body:"text"}) 
     /*
@@ -88,7 +90,8 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
 ```html
     <!-- Creating your View -->
     <!-- Create a folder called views on the same folder as your app.js -->
-    <!-- Inside the views folder create your first view index.ejs(notice the ejs since we are using the ejs templating language) -->
+    <!-- Inside the views folder create your first view index.ejs
+    (notice the ejs since we are using the ejs templating language) -->
     <!DOCTYPE html>
     <html lang="en">
     <%- include('shared/header'); -%>
