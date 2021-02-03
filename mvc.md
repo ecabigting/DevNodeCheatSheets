@@ -4,14 +4,23 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
 
 1. Your starting **app.js** See example below:
 ```javascript
-    //app.js
-    const express = require('express') // require package express js
-    const fileUpload = require('express-fileupload') // adds the files property to the req object so that we can access the uploaded files using req.files.
+    // app.js
 
-    const mongoose = require('mongoose') // require the mongoose package
-    mongoose.connect('mongodb://localhost/efnMongoDB',{useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex:true }) // connect to MongoDB on local using mongoose and set the parameters
+    // require package express js
+    const express = require('express') 
+    // adds the files property to the req object so that we can access the uploaded files using req.files.
+    const fileUpload = require('express-fileupload') 
 
-    const app = new express() // declare `app` as a new instance of express js
+    // require the mongoose package
+    const mongoose = require('mongoose') 
+    // connect to MongoDB on local using mongoose and set the parameters
+    mongoose.connect('mongodb://localhost/efnMongoDB',
+    { useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex:true }) 
+
+    // declare `app` as a new instance of express js
+    const app = new express() 
     /* we need the body-parsing middleware called body-parser,
     body-parser parse incoming request bodies
     it will make the form data available under the req.body property
@@ -26,8 +35,12 @@ Creating an MVC app with NodeJS and mentioned technologies to handle CRUD operat
     app.listen(1204, ()=>{ console.log('>> App listening on port 1204') }) // start the app and listen to port 1204
 
     // here is an example loading a view from a request
-    app.get('/', (req,res) => { // declare a route to home(index) or root
-        res.render('index') // since we loading the view engine above we are calling the index.ejs file here and render it in our response
+    // declare a route to home(index) or root
+    app.get('/', (req,res) => { 
+        // since we loading the view engine above 
+        // we are calling the index.ejs file here and 
+        // render it in our response
+        res.render('index') 
     })
 
     // calling our root which is our homeController
