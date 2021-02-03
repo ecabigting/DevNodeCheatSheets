@@ -32,3 +32,23 @@ Creating your custom Middleware is possible with ExpressJS. See example code:
     app.use(customMW)
 ```
 > Good to note: the `next()` syntax in the Middleware tells ExpressJS that your Middleware is done executing and it should call the _next_ middleware in line. When `next()` is remove from your middleware method, ExpressJS will hang as it does know that your middleware is done and it can proceed. The `next()` function is called by all middleware that are loaded by `app.use`
+
+> A sample middleware for validating a form post
+```javascript
+    // for exampl add the following code in a folder 'middleware' 
+    // for proper code management
+    // inside a file 'validationMiddleware.js'
+    module.exports = (req,res,next)=>{
+        if(req.files == null || req.body.title == null || req.body.title == null){
+            return res.redirect('/post/new')
+        }
+        next()
+    }
+
+    // to use the middleware above
+    const validationMiddleware = require('./middleware/validationMiddleware.js')
+    // in the `use` function specify to which request you want the middleware
+    // to be use, in this case on a post submition
+    app.use('/posts/store',validationMiddleware)
+
+```
